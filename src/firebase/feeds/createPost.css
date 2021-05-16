@@ -1,0 +1,86 @@
+.imageUpload {
+    background-color: white;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 16px 0px;
+    padding-bottom: 5px;
+
+  }
+  
+  .createAPost__Top {
+    margin: 0px 16px;
+  }
+  
+  .image-upload > input {
+    display: none;
+  }
+  
+  .createAPost__center {
+    margin: 0px 16px;
+  }
+  
+  .imageUpload__bottom {
+    display: flex;
+    margin: 0px 16px;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+
+  }
+  
+  .createAPost__textarea {
+    /* border: none; */
+    width: 100%;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  
+  .createAPost__textarea {
+    /* border: none; */
+  }
+  
+  .createAPost__textarea:focus {
+    /* outline: none; */
+  }
+  
+  .button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  .number1{
+      width: 49%;
+  }
+  .number2{
+    width: 49%;
+    margin-left: 2%;
+}
+  
+  .imagePreview {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .circularProgress {
+    margin-left: 8px;
+  }
+  
+  #image-1-preview {
+    display: none;
+    max-height: 60px;
+    position: relative;
+    border-radius: 5px;
+  }
+  #video-1-preview{
+    display: none;
+    max-height: 60px;
+    position: relative;
+    border-radius: 5px;
+  }
+  

@@ -1,0 +1,31 @@
+.eHome{
+    align-self: center;
+    align-items: center;
+}
+.all-stories{
+    background: gray;
+    height: 77px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.new-story{
+    border-radius: 70px;
+    border: ivory 2px solid;
+    width: 70px;
+    height: 70px;
+}
+.display-story{
+    border-radius: 70px;
+    border:ivory 2px solid;
+    width: 70px;
+    height: 70px;
+}
+.story-image{
+    height: 70px;
+    width: 70px;
+    border-radius: 70px;
+}
+.comment{
+    padding:3px 12px
+}

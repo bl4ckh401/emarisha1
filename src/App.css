@@ -1,0 +1,29 @@
+.App{
+  align-items: center;
+  max-width: 90vw;
+  align-self: center;
+  padding-left: 5vw;
+}
+* {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.app {
+  background-color: #eff2f2;
+}
+
+.app__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app__createPost {
+  display: flex;
+  justify-content: center;
+}
+.feeds{
+  display: flex;
+  justify-content: center;
+}
