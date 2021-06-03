@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { db } from '..';
 import Post from './post'
 import "./Feeds.css"
+import Likes from "./likes"
 
 function Feeds() {
     const [posts, setPosts] = useState([]);

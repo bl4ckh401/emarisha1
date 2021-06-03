@@ -1,0 +1,34 @@
+.Allprofile{
+     padding-top:30px;
+    }
+.profile__page{
+    display:flex;
+    flex-direction:row;
+}
+.profile__picture{
+    height:90px;
+    width:90px
+}
+.Avatar{
+       height:90px;
+    width:90px;
+}
+.Friends{
+    display:flex;
+    flex-direction:row;
+    padding-left:30px
+}
+.posts{
+
+}
+.Mentors{
+padding-left:10px;
+}
+.Mentees{
+padding-left:10px;
+}
+.Edit__Profile{
+    width:100%;
+    margin-top:10px;
+    margin-bottom:10px;
+}

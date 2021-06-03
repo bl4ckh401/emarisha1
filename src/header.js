@@ -4,7 +4,8 @@ import { Menu, MenuItem } from "@material-ui/core";
 import "./header.css";
 import Avatar from "@material-ui/core/Avatar";
 import Login from "./Login";
-import { useHistory } from "react-router";
+import {Link, useHistory} from "react-router-dom"
+
 
 function Header({ user, email, password }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -49,7 +50,7 @@ function Header({ user, email, password }) {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <Link to="/Profile"><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
             <MenuItem onClick={handleClose}>My account</MenuItem>
             <MenuItem onClick={handleSignOut}>Logout</MenuItem> 
           </Menu>

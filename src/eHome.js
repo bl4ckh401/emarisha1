@@ -6,9 +6,7 @@ import Header from './header';
 import Stories from './Stories'
 
 function EHome() {
-
-    const [user, setUser] = useState(null);
-
+  const [user, setUser] = useState(null)
     const authListener = () => {
         auth.onAuthStateChanged((user) => {
             if (user) {
@@ -36,4 +34,4 @@ function EHome() {
 }
 
 
-export default EHome
+export default EHome;

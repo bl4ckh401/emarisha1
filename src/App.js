@@ -1,22 +1,26 @@
 import './App.css';
 import EHome from './eHome';
+import Profile from "./Profile"
+import Allprofile from "./Allprofiles"
 import Login from './Login';
 import Signup from './Signup';
+import Authpages from "./Authpages"
 import {BrowserRouter as Router, Route, Switch, useHistory  } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { auth } from './firebase';
 
 function App() {
+ 
   const [user, setUser] = useState(null)
   const history = useHistory()
 
 
   function authListener() {
-    auth.onAuthStateChanged((user) => {
+      auth.onAuthStateChanged((user) => {
         if (user) {
             setUser(user);
             console.log(user.displayName )
-            history.push('/')
+            history.push('/Editprofile')
         } else {
             setUser(null);
         }
@@ -27,14 +31,15 @@ useEffect(() => {
    authListener()
 },[])
 
+
   return (
     <div className="App">
       <Router>
+      <Switch>
       <Route exact path="/SignUp"  component={Signup} />
-        <Switch>
           <Route exact path="/Login" component={Login} />
           {user ? (
-             <Route exact path="/" component={EHome}/>
+            <Authpages />
           ):
           (
             <Login />

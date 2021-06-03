@@ -5,6 +5,7 @@ import "./createPost.css"
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import { CircularProgress } from "@material-ui/core";
 import Login from "../../Login";
+import Likes from "./likes"
 function CreatePost({ user }) {
   const [caption, setCaption] = useState("");
   const [capital, setCapital] = useState(0);
@@ -120,6 +121,7 @@ function CreatePost({ user }) {
              value={YearlyIncome}
              onChange={(event) => setYearlyIncome(event.target.value)}></input>
              <br />
+             <Likes />
         <textarea     style= {{border : "1px solid black" }}
               className="createAPost__textarea"
               name="create a post"

@@ -1,0 +1,31 @@
+.Avatar2{
+    align-items:center;
+    padding-left:40%;
+    margin-top:15px;
+}
+.textboxes{
+    align-items:center;
+    margin-top:5%;
+    width:100%
+}
+.userName{
+    height:40px;
+    width:100%;
+    border:none;
+    border-bottom:black solid 2px
+}
+.realName{
+    height:40px;
+    width:100%;
+    border:none;
+    margin-top:20px;
+    border-bottom:black solid 2px;
+
+}
+.Bios2{
+    height:200px;
+    width:100%;
+    margin-top:20px;
+    border:none;
+    border-bottom:black solid 2px;
+}
