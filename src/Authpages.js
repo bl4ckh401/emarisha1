@@ -3,6 +3,9 @@ import eHome from "./eHome";
 import Allprofile from "./Allprofiles";
 import { Route, Switch } from "react-router-dom";
 import Editprofile from "./Editprofile"
+import Profile from "./Profile"
+import Angel from "./Angel"
+import Chats from "./chat";
 
 function Authpages() {
 
@@ -10,7 +13,7 @@ function Authpages() {
     return(
         <div>
           <Switch>
-            <Route path="/Editprofile" component={Editprofile} />
+            <Route path="/Chats" component={Chats} />
           </Switch>
         </div>
     )

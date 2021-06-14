@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Switch, useHistory  } from "react-router
 import { useState, useEffect } from 'react';
 import { auth } from './firebase';
 
+
 function App() {
  
   const [user, setUser] = useState(null)

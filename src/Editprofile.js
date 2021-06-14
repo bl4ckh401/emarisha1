@@ -5,15 +5,25 @@ import { storage, db } from "./firebase";
 import firebase from "firebase";
 
 
-function Editprofile(user0) {
+function Editprofile(user, userProfileUrl) {
    
    const [name, setName] = useState("")
    const [userName, setUserName] = useState("")
    const [Bios, setBios] = useState("")
+     const [file, setFile] = useState(null);
 
+
+
+const handledp = (event) => {
+      if (event.target.files[0]) {
+      setFile(event.target.files[0]);
+            var displayPhoto = URL.createObjectURL(event.target.files[0]);
+
+}
+}
 
 const handleNewUser = (user) => {
-     const newUser = storage.ref(`user/${user.data}`).put(user) 
+     const newUser = storage.ref(`user/${userName}`).put(userName) 
       newUser.on(
         "state_changed",
         (snapshot) => {
@@ -30,21 +40,21 @@ const handleNewUser = (user) => {
         () => {
           storage
             .ref("user")
-            .child(user.data)
+            .child(userName)
             .getDownloadURL()
             .then((url) => {
               db.collection("user").add({
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                 userName: userName,
-                userProfileUrl:
-                  "https://avatars0.githubusercontent.com/u/55942632?s=460&u=f702a3d87d1f9c125f1ead9b3bec93d26cd3b3a0&v=4",
+                userProfileUrl:url,
                 Bios: Bios,
                 name:name
               });
-            });
             setName("")
             setUserName("")
             setBios("")
+            setFile(null)
+            });
         }
       )
 }
@@ -67,12 +77,22 @@ const handleChangeBios = (event) => {
     return(
         <div>
           <div className="Avatar2">
+          <label htmlFor="displayPhoto" >
             <Avatar className="profile__picture"
             style={{
                 height:"120px",
                 width:"120px"
             }}
+            >
+            </Avatar>
+            <input 
+            id="displayPhoto"
+            type="file"
+            accept="image/*"
             />
+            </label>
+
+            
           </div>
           <div className="textboxes">
             <input className="userName" type="text" placeholder="Name" onChange={handleChangeName} ></input><br/>

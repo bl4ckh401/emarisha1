@@ -1,0 +1,38 @@
+.Angel{
+    align-items:center;
+    margin-top:10px; 
+}
+.investors{
+    align-items:center;
+    
+}
+.business_plan{
+    display:flex;
+    flex-direction:row;
+}
+.buttons{
+    display:flex;
+    flex-direction:column;
+    width:30%
+}
+.button{
+    width:29%;
+    border:"black solid 1px";
+}
+.insert{
+    height:100%;
+    border-left:none; 
+}
+.textarea{
+    width:100%;
+    height:100%;
+    border-left:none
+}
+button:active{
+    border-right:none;
+}
+
+button:active{
+    background-color:gold;
+    border-right:none;
+}

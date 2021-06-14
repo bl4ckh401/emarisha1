@@ -7,10 +7,9 @@ import {useHistory, Link, Route} from "react-router-dom";
 import Editprofile from "./Editprofile"
 
 
-function Profile(user, posts, uid){
+function Profile(userName,Bios,name,userProfileUrl, posts, uid){
 
       const [post, setPost] = useState([])
-      const [Bios, setBios] = useState("")
       const history = useHistory()
 
     db.collection(`posts`)
@@ -42,7 +41,9 @@ function Profile(user, posts, uid){
         <Avatar
          className="profile__picture"
          style={{height:"90px", width:"90px"}}
-        />
+        >
+        {userProfileUrl}
+        </Avatar>
        </div>
        <div  className="Friends">
           <div className="posts">

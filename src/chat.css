@@ -1,0 +1,8 @@
+.ChatMessage{
+    display:flex;
+    flex-direction:row;
+}
+.input_field{
+    margin-top:20px;
+    position:fixed;
+}

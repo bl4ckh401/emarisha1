@@ -44,7 +44,7 @@ function Login(props) {
             if (user) {
                 setUser(user);
                 console.log(user.displayName )
-                history.push('/Editprofile')
+                history.push('/Chats')
             } else {
                 setUser(null);
             }
@@ -119,6 +119,5 @@ const useStyles = makeStyles((theme) =>({
     }
 
 }))
-
 
 export default Login
