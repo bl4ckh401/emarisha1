@@ -6,9 +6,6 @@ function ChatMessage(props){
     const { user, message, uid, photoURL, createdAt } = props.message;
     return(
       <div>
-      <label htmlFor="ChatMessage">
-       <ChatBubbleOutlineIcon />
-      </label>
         <div className="ChatMessage" id="ChatMessage">
          <div >
          <img src={photoURL}/>

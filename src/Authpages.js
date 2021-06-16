@@ -7,13 +7,14 @@ import Profile from "./Profile"
 import Angel from "./Angel"
 import Chats from "./chat";
 
+
 function Authpages() {
 
 
     return(
         <div>
           <Switch>
-            <Route path="/Chats" component={Chats} />
+            <Route path="/eHome" component={eHome} />
           </Switch>
         </div>
     )

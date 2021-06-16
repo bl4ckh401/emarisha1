@@ -29,15 +29,82 @@ function Chats(){
    const [Allmessages] = useCollectionData(query, {idField: 'id'});
 
     return(
-        <div>
-         <h1>Chats</h1>
-         {Allmessages && Allmessages.map(msg => <ChatMessage key={msg.id}
-message={msg} />)}
-         <form className="input_field">
-           <input type="text" placeholder="Enter Message" onChange={handleInput}/>
-           <button type="submit" onClick={handleSendMessage}>Send</button>
-         </form>
-        </div>
-    )
+    <div>
+      <h1>Chats</h1>
+      <div>
+        {Allmessages && (
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              height: "auto",
+              minHeight: "88vh",
+              flexDirection: "column",
+              gap: "5px",
+              background: "turquoise",
+              margin: "3em auto",
+              padding: "10px"
+            }}
+          >
+            {Allmessages.map((msg) => (
+              <div
+                style={{
+                  maxWidth: "70%",
+                  boxShadow: "0px 0px 4px 1px rgba(100, 100, 100, 0.3)"
+                }}
+                className={
+                  msg.user === auth.currentUser.displayName
+                    ? "chat-container to"
+                    : "chat-container from"
+                }
+              >
+                <ChatMessage key={msg.id} message={msg} me={auth.currentUser} />
+              </div>
+            ))}
+            <form
+              style={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                justifyContent: "center"
+              }}
+            >
+              <textarea
+                type="text"
+                placeholder="Enter Message"
+                rows={4}
+                style={{
+                  flexGrow: "1",
+                  border: "none",
+                  padding: "7px 5px",
+                  borderRadius: "4px",
+                  minHeight: "45px"
+                }}
+                onChange={handleInput}
+              />
+              <button
+                type="submit"
+                onClick={handleSendMessage}
+                style={{
+                  backgroundColor: "white",
+                  height: "45px",
+                  minWidth: "80px",
+                  padding: "3px 5px",
+                  textTransform: "capitalize",
+                  fontWeight: "bold",
+                  fontSize: "1.2em",
+                  border: "none",
+                  borderRadius: "4px"
+                }}
+              >
+                Send
+              </button>
+            </form>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
 export default Chats;

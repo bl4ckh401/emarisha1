@@ -34,7 +34,7 @@ useEffect(() => {
 
 
   return (
-    <div className="App">
+    <div className="w-screen h-screen bg-gray-300">
       <Router>
       <Switch>
       <Route exact path="/SignUp"  component={Signup} />

@@ -8,8 +8,8 @@ import Login from "../../Login";
 import Likes from "./likes"
 function CreatePost({ user }) {
   const [caption, setCaption] = useState("");
-  const [capital, setCapital] = useState(0);
-  const [YearlyIncome, setYearlyIncome] = useState(0);
+  const [capital, setCapital] = useState(null);
+  const [YearlyIncome, setYearlyIncome] = useState(null);
   const [Challenges, setChallenges] = useState("");
   const [insert, setInsert ] = useState(false)
   const [file, setFile] = useState(null);
@@ -72,9 +72,9 @@ function CreatePost({ user }) {
 
           setProgress(0);
           setCaption("");
-          setCapital(0)
+          setCapital(null)
           setChallenges("")
-          setYearlyIncome(0)
+          setYearlyIncome(null)
           setFile(null);
           var preview1 = document.getElementById("image-1-preview");
           // var preview2 = document.getElementById("video-1-preview");
@@ -96,34 +96,37 @@ function CreatePost({ user }) {
     preview2.style.display = "none";
   };    
   return (
-    <div className="app__createPost">
-        <div className="imageUpload">
-          <div className="createAPost__Top">
+    <div class="bg-gray-300 border-b-4 border-double border-pink-400">
+        <div class="bg-gray-300">
+          <div class="text-center">
             <h4>Create a Post</h4>
           </div>
-            <div className="createAPost__center">
+            <div className="create__post">
             <textarea
-              className="createAPost__textarea"
+              class="bg-gray-200 border-black border flex w-full py-2 px-4 mb-4"
               name="create a post"
               rows="2"
               value={caption}
               placeholder="Business Description"
               onChange={(event) => setCaption(event.target.value)}
             ></textarea> 
+            <div class="flex flex-row w-screen justify-between">
             <input type='number'              
              placeholder="Capital"
+              class="bg-gray-200 flex w-1/2 border-black border py-2 px-4 mb-4"
              value={capital}            
-              className="number1"
              onChange={(event) => setCapital(event.target.value)}></input>
             <input type='number'              
              placeholder="YearlyIncome"
-             className="number2"
+             class="bg-gray-200 flex w-1/2 border-black border py-2 px-4 mb-4"
              value={YearlyIncome}
-             onChange={(event) => setYearlyIncome(event.target.value)}></input>
+             onChange={(event) => setYearlyIncome(event.target.value)}>
+             </input>
              <br />
-             <Likes />
+              </div>
+
         <textarea     style= {{border : "1px solid black" }}
-              className="createAPost__textarea"
+              class="bg-gray-200 flex w-full border-black border py-2 px-4 mb-4"
               name="create a post"
               rows="2"
               value={Challenges}
@@ -159,7 +162,7 @@ function CreatePost({ user }) {
 
             </div>
             <button
-              className="button"
+            class="bg-pink-300 rounded-full px-4 py-2 mb-3"
               onClick={handleUpload}
               style={{
                 color: caption ? "green" : "red",

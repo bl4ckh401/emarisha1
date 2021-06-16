@@ -44,7 +44,7 @@ function Login(props) {
             if (user) {
                 setUser(user);
                 console.log(user.displayName )
-                history.push('/Chats')
+                history.push('/eHome')
             } else {
                 setUser(null);
             }

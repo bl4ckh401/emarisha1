@@ -21,8 +21,8 @@ function Post({ id, userName, postFileUrl, caption, comments, user, capital, yea
   };
 
   return (
-    <div className="post">
-      <div className="post__header">
+    <div class="bg-gray-300 mt-4">
+      <div className="post__header" class="flex flex-row justify-between px-4 py-3">
         <div
           style={{
             display: "flex",
@@ -31,6 +31,7 @@ function Post({ id, userName, postFileUrl, caption, comments, user, capital, yea
           }}
         >
         <Avatar
+            class="h-8 w-8 bg-gray-100 justify-center item-center rounded-full text-bold"
             alt={userName.toLowerCase()}
             style={{ height: "25px", width: "25px" }}
           >
