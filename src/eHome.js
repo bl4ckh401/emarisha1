@@ -27,6 +27,7 @@ function EHome() {
         <div className="app__body">
             
             <Header />
+            <Stories />
             <CreatePost user={user}/>
             <Feeds user={user} />
         </div>

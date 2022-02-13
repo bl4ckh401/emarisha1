@@ -14,7 +14,8 @@ function Authpages() {
     return(
         <div>
           <Switch>
-            <Route path="/eHome" component={eHome} />
+            <Route path="/editprofile" component={Editprofile} exact/>
+            {/* <Route path="/chats" component={Chats} /> */}
           </Switch>
         </div>
     )
