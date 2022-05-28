@@ -3,8 +3,7 @@ import { auth } from "./firebase/index";
 import { Menu, MenuItem } from "@material-ui/core";
 import "./header.css";
 import Avatar from "@material-ui/core/Avatar";
-import Login from "./Login";
-import {Link, useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./styles/main.css"
 
 
@@ -19,10 +18,10 @@ function Header({ user, email, password, userProfileUrl }) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleSignOut = (event) => {
-        auth.signOut()
-        history.push('/Login')
-      }
+  const handleSignOut = () => {
+    auth.signOut()
+    history.push('/Login')
+  }
 
 
   return (
@@ -31,35 +30,32 @@ function Header({ user, email, password, userProfileUrl }) {
         src={userProfileUrl}
         alt=""
       />
-        <div className="header__Right">
-          {/* <button className="button" onClick={() => auth.signOut()}>
+      <div className="header__Right">
+        {/* <button className="button" onClick={() => auth.signOut()}>
             
           </button> */}
 
-          <Avatar
-            className="header__RightProfileImg"
-            onClick={handleClick}
-            style={{ height: "25px", width: "25px" }}
-          >
-          </Avatar>
+        <Avatar
+          className="header__RightProfileImg"
+          onClick={handleClick}
+          style={{ height: "25px", width: "25px" }}
+        >
+        </Avatar>
 
-          <Menu
-            class="flex flex-row"
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-            <Link to="/Profile"><MenuItem  onClick={handleClose}>Profile</MenuItem></Link>
-            <Link to="/Chats"><MenuItem onClick={handleClose}>Chats
-            </MenuItem></Link>
-            <MenuItem onClick={handleClose}>Investors</MenuItem> 
-            <MenuItem onClick={handleClose}>Search</MenuItem> 
-
-            <MenuItem onClick={handleSignOut}>Logout</MenuItem> 
-          </Menu>
-        </div>
+        <Menu
+          class="flex flex-row"
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          <Link to="/profile"><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
+          <Link to="/chats"><MenuItem onClick={handleClose}>Chats
+          </MenuItem></Link>
+          <MenuItem onClick={handleSignOut}>Logout</MenuItem>
+        </Menu>
+      </div>
     </div>
   );
 }

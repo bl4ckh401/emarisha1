@@ -21,8 +21,10 @@ function Post({ id, userName, postFileUrl, caption, comments, user, capital, yea
   };
 
   return (
-    <div class="bg-gray-300 mt-4">
-      <div className="post__header" class="flex flex-row justify-between px-4 py-3">
+    <div class="bg-gray-300 mt-4 content-center items-center">
+      {/* headr --> avatar + username + time */}
+
+      <div className="post__header" class="flex flex-row justify-between items-center px-4 py-3">
         <div
           style={{
             display: "flex",
@@ -30,7 +32,7 @@ function Post({ id, userName, postFileUrl, caption, comments, user, capital, yea
             alignItems: "center",
           }}
         >
-        <Avatar
+          <Avatar
             class="h-8 w-8 bg-gray-100 justify-center item-center rounded-full text-bold"
             alt={userName.toLowerCase()}
             style={{ height: "25px", width: "25px" }}
@@ -48,38 +50,37 @@ function Post({ id, userName, postFileUrl, caption, comments, user, capital, yea
                 <Delete style={{ marginTop: "5px" }} onClick={deletePost} />
               </label>
 
-            </div>):(<></>)):(<></>)
-            }
+            </div>) : (<></>)) : (<></>)
+        }
       </div>
-      {/* headr --> avatar + username + time */}
 
       {/* image */}
       <img className="post__image" src={postFileUrl} alt="post" />
       {/* username + caption */}
       <div className="post__bottom">
-          <Avatar
-            alt={userName.toLowerCase()}
-            style={{ height: "25px", width: "25px", color:"black" }}
-          >
-            {userName.charAt(0)}
-          </Avatar>
-          <div className="all__ps">
+        <Avatar
+          alt={userName.toLowerCase()}
+          style={{ height: "25px", width: "25px", color: "black" }}
+        >
+          {userName.charAt(0)}
+        </Avatar>
+        <div className="all__ps">
           <p className="cap__Area">
-          {caption}
-        </p>
-        <p className="cap__Area">
-        Capital:{capital}
-        </p>
-        <p className="cap__Area">
-         Challenges: {Challenges}
-        </p>
-        <p className="cap__Area">
-         YearlyIncome:{yearlyIncome}
-        </p>
+            {caption}
+          </p>
+          <p className="cap__Area">
+            Capital:{capital}
+          </p>
+          <p className="cap__Area">
+            Challenges: {Challenges}
+          </p>
+          <p className="cap__Area">
+            YearlyIncome:{yearlyIncome}
+          </p>
 
-          </div>
-       </div>
-       {comments ? (
+        </div>
+      </div>
+      {comments ? (
         comments.map((comment) => (
           <Comment username={comment.userName} comment={comment.comment} />
         ))

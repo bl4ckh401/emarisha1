@@ -10,7 +10,11 @@
   border-top: 0.5px solid #eff2f2;
   border-bottom: 0.5px solid #eff2f2;
 }
-
+.Feed{
+  width: 80vw;
+  justify-content: center;
+  align-items: center;
+}
 .post__header {
   display: flex;
   padding: 12px;

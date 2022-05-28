@@ -1,10 +1,14 @@
 .feed__posts {
     margin-top: 24px;
     align-self: center;
+    justify-content: center;
   }
   
   .feed {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
   }
   
